@@ -16,7 +16,7 @@
       <td><%= article.description %></td>
       <td>  <%= link_to 'Show', article_path(article), class: 'btn btn-outline-info mx-2' %></td>
       <td>  <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-outline-info mx-2' %></td>
-      <td><%= button_to 'Delete', { action: "destroy", id: article.id }, method: :delete,  class: 'btn btn-outline-danger mx-2'  %></td>
+      <td><%= link_to 'Delete', article_path(article), data: { "turbo-method": :delete, "turbo-confirm": "Are you sure?"} %> </td>
     </tr>
   <% end %>
   </tbody>
