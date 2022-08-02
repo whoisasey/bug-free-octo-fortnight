@@ -14,9 +14,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <%= render 'layouts/navbar' %>
-  <body>
+  <body class="d-flex flex-column">
+    <%= render 'layouts/navigation' %>
     <%= render 'layouts/messages' %>
     <%= yield %>
+
   </body>
 </html>
