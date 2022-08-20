@@ -15,6 +15,12 @@
         <li class="nav-item">
           <%= link_to "Create New Article", new_article_path, class: "nav-link active", 'aria-current': 'page' %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Log In", login_path, class: "nav-link ", 'aria-current': 'page' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Log Out", logout_path, class: "nav-link ", 'aria-current': 'page', data: {turbo_method: :delete} %>
+        </li>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
