@@ -16,7 +16,9 @@
           <div class="card-title"><%= image_tag 'profile-placeholder.png', height:150, class: "rounded shadow mx-auto d-block" %></div>
             <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
             <%= link_to 'View User', user_path(user), class:"btn btn-outline-success" %>
-            <%= link_to "Edit User", edit_user_path(user), class:"btn btn-outline-info" %>
+            <% if logged_in? && user == current_user %>
+              <%= link_to "Edit User", edit_user_path(user), class:"btn btn-outline-info" %>
+            <% end %>
           </div>
           <div class="card-footer text-muted">
           <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small></div>
