@@ -20,11 +20,12 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-
+    
     if @article.save
       flash[:notice] = "Article was created successfully"
       redirect_to @article
     else
+      flash[:notice] = "Oops, something went wrong"
       render 'new'
     end
   end
