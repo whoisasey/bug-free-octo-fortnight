@@ -38,11 +38,9 @@ class UsersController < ApplicationController
     end
   end
 
-  # this is not being hit during delete
   def destroy
-    binding.break
     @user.destroy
-  session[:user_id] = nil
+    session[:user_id] = nil
     flash[:notice] = "Account and all associated articles have been deleted"
     redirect_to articles_path
   end
